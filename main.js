@@ -23,9 +23,28 @@ Output =>
 
 */
 
-function MultiByNum1OrNum2() {
-  // WRITE YOUR CODE UNDER THIS LINE         
-}
+
+function MultiByNum1OrNum2(arr , num1 ,num2) {
+  
+  
+    return arr.map(function(elemnt){
+     
+    if (elemnt %num1===0){
+      return elemnt*num1
+      
+    }
+    return elemnt*num2
+
+    },)
+    
+
+} 
+
+   
+  
+  
+ 
+
 
 /* Q2:
 Using Filter
@@ -34,7 +53,6 @@ that takes an array of objects and 2 numbers as a parameter
 and return a new array with the object has 
 a name longer than the first parameter
 and in the same time less than the second parameters 
-
 var arrOfObj1 = [
   { name: "alex" ,age:22},
   { name: "mercer",age:26},
@@ -48,7 +66,6 @@ Output =>
 [ 
   { name: "mercer",age:26},
 ]
-
 Example: 
 longerAndYounger(arrOfObj1,3,30)
 Output =>
@@ -58,8 +75,12 @@ Output =>
 ]
 */
 
-function longerAndYounger() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+function longerAndYounger(arr , n1 , n2) {
+  
+  return arr.filter(function(arr) {
+    return arr.name.length > n1 && arr.age< n2 ;
+  });
+
 }
 
 /* Q3:
@@ -89,8 +110,17 @@ Output =>
 "alice, fried chiken, pizaa, burger, hot dog, eggs"
   
 */
-function nameAndAllFoods() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+
+
+function nameAndAllFoods(arr , num) {
+         
+ return arr.reduce(function(re ,e , n ) {
+    if (n === num ){
+      re = e.name +re
+    }
+    return re + ',' + e.food;
+  }," ");
+   
 }
 
 
